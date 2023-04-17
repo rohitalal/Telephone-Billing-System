@@ -1,0 +1,20 @@
+#Custlogin {
+    color: #fff;
+    background: #da7c10;
+    padding: 7px;
+    margin: 80px;
+    display: inline;
+}
+#Emplogin {
+    color: #fff;
+    background: #da7c10;
+    padding: 7px;
+    margin: auto;
+    display: inline;
+}
+
+body{
+    align-items: center;
+    text-align: center;
+    margin-top: 30%;
+}
