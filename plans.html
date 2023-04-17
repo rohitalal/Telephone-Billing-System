@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+		body {
+            
+			background: rgb(173, 207, 122);
+		}
+		
+		[data-tab-info] {
+			display: none;
+		}
+		
+		.active[data-tab-info] {
+			display: block;
+		}
+		
+		.tab-content {
+			font-size: 30px;
+			font-family: sans-serif;
+			font-weight: bold;
+			color: rgb(82, 75, 75);
+		}
+		
+		.tabs {
+			font-size: 40px;
+			color: rgb(255, 255, 255);
+			display: flex;
+			margin: 0;
+		}
+		
+		.tabs span {
+			background: rgb(190, 62, 62);
+			padding: 10px;
+			border: 1px solid rgb(255, 255, 255);
+		}
+		
+		.tabs span:hover {
+			background: rgb(29, 185, 112);
+			cursor: pointer;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="tabs">
+		<span data-tab-value="#tab_1">1 Month</span>
+		<span data-tab-value="#tab_2">6 Months</span>
+		<span data-tab-value="#tab_3">12 Months</span>
+        <span data-tab-value="#tab_4">24 Months</span>
+	</div>
+
+	<div class="tab-content">
+		<div class="tabs__tab active" id="tab_1" data-tab-info>
+			<ul>
+                <li>Local + STD: Unlimited calling/Rs 149/-</li>
+                <li>Eligibilty: New and Existing Customers</li>
+                <li>Free Calling From 11PM to 6AM & on Sundays</li>
+              </ul>
+
+		</div>
+		<div class="tabs__tab" id="tab_2" data-tab-info>
+			<ul>
+                <li>Local + STD: Unlimited calling/Rs 2695 for 6 months</li>
+                <li>Eligibilty: New and Existing Customers</li>
+                <li>Free Unlimited Calling 24 Hours</li>
+              </ul>
+
+		</div>
+		<div class="tabs__tab" id="tab_3" data-tab-info>
+			<ul>
+                <li>Local + STD: Unlimited calling/Rs 4388 for 12 months</li>
+                <li>Eligibilty: New and Existing Customers</li>
+                <li>Free Unlimited Calling 24 Hours</li>
+              </ul>
+
+		</div>
+        <div class="tabs__tab" id="tab_4" data-tab-info>
+			<ul>
+                <li>Local + STD: Unlimited calling/Rs 6766 for 24 months</li>
+                <li>Eligibilty: New and Existing Customers</li>
+                <li>Free Unlimited Calling 24 Hours</li>
+              </ul>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		const tabs = document.querySelectorAll('[data-tab-value]')
+		const tabInfos = document.querySelectorAll('[data-tab-info]')
+
+		tabs.forEach(tab => {
+			tab.addEventListener('click', () => {
+				const target = document
+					.querySelector(tab.dataset.tabValue);
+
+				tabInfos.forEach(tabInfo => {
+					tabInfo.classList.remove('active')
+				})
+				target.classList.add('active');
+			})
+		})
+	</script>
+</body>
+
+</html>
